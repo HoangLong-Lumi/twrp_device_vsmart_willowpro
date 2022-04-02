@@ -1,10 +1,19 @@
-## OrangeFox Recovery Tree for Vsmart Star 4 ( willowpro, V341A )
-Due to FBE, i cannot boot TWRP on this device now, only OrangeFox
+## OrangeFox Recovery Tree for Vsmart Star 4 ( willowpro )
 
-## Compile:
+For building OrangeFox for Vsmart Star 4
 
-```sh
-source build/envsetup.sh
-lunch omni_willowpro-eng
+## Working
+
+- Almost
+
+## Not Working
+
+- FBE
+
+## Compile
+
+```
+. build/envsetup.sh
+lunch twrp_willowpro-eng
 make recoveryimage
 ```
