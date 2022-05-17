@@ -1,11 +1,11 @@
 # mount point	fstype		device			device2				flags
 # Dyanmic Partitions
-/system		            ext4	/dev/block/dm-0                                flags=backup=1;display="System";wipeingui
-/vendor                 ext4    /dev/block/dm-1                                flags=backup=1;display="Vendor";wipeingui
-/system_image	        emmc	/dev/block/dm-0                                flags=backup=1;display="System Image";flashimg=1
-/vendor_image	        emmc	/dev/block/dm-1                                flags=backup=1;display="Vendor Image";flashimg=1
-/product		        ext4	/dev/block/dm-2                               flags=backup=1;display="Product";wipeingui
-/product_image	        emmc	/dev/block/dm-2                               flags=backup=1;display="Product Image";flashimg=1
+/system		            ext4	/dev/block/dm-0                                wait,avb=vbmeta,logical,first_stage_mount,flags=backup=1;display="System"
+/vendor                 ext4    /dev/block/dm-1                                wait,avb,logical,first_stage_mount,flags=backup=1;display="Vendor"
+/system_image	        emmc	/dev/block/dm-0                                flags=backup=1;display="System Image";flashimg=1;wipeingui
+/vendor_image	        emmc	/dev/block/dm-1                                flags=backup=1;display="Vendor Image";flashimg=1;wipeingui
+/product		        ext4	/dev/block/dm-2                               wait,avb,logical,first_stage_mount,flags=backup=1;display="Product"
+/product_image	        emmc	/dev/block/dm-2                               flags=backup=1;display="Product Image";flashimg=1;wipeingui
 
 /data             ext4     /dev/block/platform/bootdevice/by-name/userdata     flags=fileencryption=aes-256-xts:aes-256-cts:v1
 /cache            ext4     /dev/block/platform/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
