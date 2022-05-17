@@ -36,9 +36,6 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := willowpro,V341A
-
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=userdebug
 BOARD_KERNEL_IMAGE_NAME := Image.gz
