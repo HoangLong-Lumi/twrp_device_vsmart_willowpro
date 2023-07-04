@@ -1,11 +1,13 @@
 # mount point	fstype		device			device2				flags
 # Dynamic Partitions
-/system		            ext4	/dev/block/mapper/system                                wait,avb,logical,first_stage_mount,flags=backup=1;display="System"
-/vendor                 ext4    /dev/block/mapper/vendor                                wait,avb,logical,first_stage_mount,flags=backup=1;display="Vendor"
-/product		        ext4	/dev/block/mapper/product                               wait,avb,logical,first_stage_mount,flags=backup=1;display="Product"
-/system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1;wipeingui
-/vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1;wipeingui
-/product_image	        emmc	/dev/block/mapper/product                               flags=backup=1;display="Product Image";flashimg=1;wipeingui
+/system         ext4                /dev/block/mapper/system                                    wait,avb=vbmeta,logical,first_stage_mount,flags=backup=1;display="System";
+/system_image   emmc                /dev/block/mapper/system                                    flags=backup=1;display="System Image";flashimg=1;wipeingui;
+/vendor         ext4                /dev/block/mapper/vendor                                    wait,avb=vbmeta,logical,first_stage_mount,flags=backup=1;display="Vendor";
+/vendor_image   emmc                /dev/block/mapper/vendor                                    flags=backup=1;display="Vendor Image";flashimg=1;wipeingui;
+/odm            ext4                /dev/block/mapper/odm                                       wait,avb=vbmeta,logical,first_stage_mount,flags=backup=1;display="ODM";
+/odm_image      emmc                /dev/block/mapper/odm                                       flags=backup=1;display="ODM Image";flashimg=1;wipeingui;
+/product        ext4                /dev/block/mapper/product                                   wait,avb=vbmeta,logical,first_stage_mount,flags=backup=1;display="Product";
+/product_image  emmc                /dev/block/mapper/product                                   flags=backup=1;display="Product Image";flashimg=1;wipeingui;
 
 /data             f2fs     /dev/block/platform/bootdevice/by-name/userdata     flags=length=-16384;
 /cache            ext4     /dev/block/platform/bootdevice/by-name/cache        flags=backup=1;wipeingui;wipeduringfactoryreset
