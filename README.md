@@ -1,14 +1,4 @@
-## OrangeFox Recovery Tree for Vsmart Star 4 ( willowpro )
-
-For building OrangeFox for Vsmart Star 4
-
-## Working
-
-- Almost
-
-## Not Working
-
-- FBE
+## TWRP Tree for Vsmart Star 4 ( willowpro )
 
 ## Compile
 
