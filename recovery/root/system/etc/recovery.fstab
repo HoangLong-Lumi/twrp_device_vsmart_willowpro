@@ -15,7 +15,7 @@ product /product ext4 ro wait,avb,logical,first_stage_mount,
 # 155 "vendor/mediatek/proprietary/hardware/fstab/mt6765/fstab.in.mt6765"
 /dev/block/platform/bootdevice/by-name/md_udc /metadata ext4 wait,formattable,first_stage_mount
 
-/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic wait,check,formattable,quota,reservedsize=128m,checkpoint=block,fileencryption=aes-256-cts:v1
+/dev/block/platform/bootdevice/by-name/userdata	/data f2fs noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678	wait,length=-16384
 /dev/block/platform/bootdevice/by-name/cache /cache ext4 wait,check,formattable
 
 /dev/block/platform/bootdevice/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
